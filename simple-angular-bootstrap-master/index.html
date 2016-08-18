@@ -12,7 +12,20 @@
   </head>
   <body ng-app="MyApp">
     <div ui-view id="app"></div>
-
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBcgQr7d9ZSZG5czxGnG65e_Xr6ewFz3j8",
+        authDomain: "chat-ang.firebaseapp.com",
+        databaseURL: "https://chat-ang.firebaseio.com",
+        storageBucket: "chat-ang.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+	
     <script src="bower/jquery/dist/jquery.min.js"></script>
     <script src="bower/angular/angular.min.js"></script>
     <script src="bower/angular-ui-router/release/angular-ui-router.min.js"></script>
