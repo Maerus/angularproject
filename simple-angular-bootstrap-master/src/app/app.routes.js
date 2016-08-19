@@ -18,14 +18,21 @@ MyApp.config(function($stateProvider, $urlRouterProvider) {
       url: "login",
       templateUrl: "templates/login/login.html",
     })
-    .state("main.chatroom", {
-      url: "chatroom",
-      templateUrl: "templates/chat/chatroom.html",
+    .state("chat", {
+      url: "/chat/",
+      templateUrl: "templates/main/main.html",
+	  controller: "ChatController",
+	  controllerAs: "chat"
     })
+	.state("chat.room",{
+		url: ":roomname",
+		templateUrl: "templates/chat/chatroom.html",
+	})
+	/*
     .state("stuff", {
       url: "/stuff",
       templateUrl: "templates/stuff/stuff.html",
       controller: "StuffController",
       controllerAs: "stuffCtrl"
-    })
+    })*/
 });

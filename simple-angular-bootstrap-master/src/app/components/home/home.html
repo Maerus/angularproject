@@ -7,14 +7,10 @@
         <div class="column">
 	      <h2 class="header1">Hot Topics</h2>
 		  <ul>
-		    <li>laita tänne kuumat topicit linkkeineen</li>
-		    <li>laita tänne kuumat topicit linkkeineen</li>
-		    <li>laita tänne kuumat topicit linkkeineen</li>
-		    <li>laita tänne kuumat topicit linkkeineen</li>
+		    <li ng-repeat="chat in freshChats">Channel: <a ng-href="#/chat/{{chat.name}}">{{chat.name}}</a>: {{chat.lastMessage}}</li>
 		  </ul>
         </div>
-        <div class="column">
-		  <p>Sign in via Google to chat</p>
+        <div style="display: none" class="column">
           <img class="ui spaced image" src="img/nodejs.png">
         </div>
       </div>

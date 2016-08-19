@@ -1,3 +1,4 @@
+/*
 MyApp.service("ApiService", function() {
 
   this.syncMethod = function() {
@@ -15,4 +16,29 @@ MyApp.service("ApiService", function() {
       })
   }
 
+})
+*/
+MyApp.service("FirebaseService", function() {
+	
+	this.database = firebase.database();
+	
+	this.writeChat = function(chatId, chatName, lastMessage, timestamp){
+		this.database.ref('chats/' + chatId).set({
+			name: chatName,
+			lastMessage: lastMessage,
+			timestamp: timestamp
+		})
+	};
+	
+	this.writeMember = function(chatId, memberName){
+		this.database.ref('members/' + chatId + '/' + memberName).set(true);
+	};
+	
+	this.writeMessage = function(chatId, message, member, timestamp){
+		this.database.ref('messages/' + chatId).push({
+			member: member,
+			message: message,
+			timestamp: timestamp
+		})
+	};
 })
