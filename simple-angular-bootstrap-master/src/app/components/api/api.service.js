@@ -17,7 +17,6 @@ MyApp.service("ApiService", function() {
   }
 
 })
-*/
 MyApp.service("FirebaseService", function() {
 	
 	this.database = firebase.database();
@@ -42,3 +41,5 @@ MyApp.service("FirebaseService", function() {
 		})
 	};
 })
+
+*/

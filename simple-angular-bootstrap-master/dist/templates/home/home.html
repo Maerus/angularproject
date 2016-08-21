@@ -7,7 +7,7 @@
         <div class="column">
 	      <h2 class="header1">Hot Topics</h2>
 		  <ul>
-		    <li ng-repeat="chat in freshChats">Channel: <a ng-href="#/chat/{{chat.name}}">{{chat.name}}</a>: {{chat.lastMessage}}</li>
+		    <li ng-repeat="(key, chat) in freshChats">{{chat.timestamp | date:'dd.MM.yyyy / HH:mm'}} <a ng-href="#/chat/{{key}}">{{key}}</a> {{chat.messager}}: {{chat.lastMessage}}</li>
 		  </ul>
         </div>
         <div style="display: none" class="column">
