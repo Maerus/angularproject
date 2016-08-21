@@ -1,11 +1,14 @@
 <div>
-  <div class="chatbox">
   <h2>Channel: {{chatName}}</h2>
+  <div class="chatbox">
 	<ul>
 	  <li ng-repeat="msg in messages">{{msg.timestamp | date:'dd.MM.yyyy / HH:mm'}}   {{msg.member}}: {{msg.message}}</li>
 	</ul>
   </div>
-	<input ng-model="username" class="bottom wide user" type="text" placeholder="username"></input>
-	<input ng-model="chatmessage" class="bottom wide message" type="text" placeholder="Type to chat"></input>
-	<input ng-click="sendMessage()" class="bottom wide send" type="button" value="Send"></input>
+  <div class="bottom">
+    <input ng-model="username" class="user" type="text" placeholder="username"></input>
+	<input id="message" ng-model="chatmessage" class="message" type="text" placeholder="Type to chat"></input>
+	<input id="send" ng-click="sendMessage()" class="send" type="button" value="Send" disabled></input>
+
+  </div>
 </div>

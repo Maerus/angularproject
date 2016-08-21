@@ -9,8 +9,25 @@ MyApp.controller("ChatController", function($scope, $stateParams, $timeout) {
 			});
 		}
 	}
+	$scope.chatmessage = "";
+	$scope.username = user.getName();
+	$scope.$watch('username', function() {
+		user.setName($scope.username);
+		if($scope.chatmessage.length > 0 && $scope.username.length > 1){
+			document.getElementById("send").disabled = false;
+		} else {
+			document.getElementById("send").disabled = true;
+		}
+    });
+	$scope.$watch('chatmessage', function() {
+		if($scope.chatmessage.length > 0 && $scope.username.length > 1){
+			document.getElementById("send").disabled = false;
+		} else {
+			document.getElementById("send").disabled = true;
+		}
+	});
 	
-	
+	$("#message").focus();
 	
 	$scope.sendMessage = function(){
 		//console.log("user: "+ $scope.username + "  msg: " + $scope.chatmessage + "  time: " + Date.now());
@@ -27,6 +44,6 @@ MyApp.controller("ChatController", function($scope, $stateParams, $timeout) {
 				timestamp: timestamp
 			});
 		}
-		
+		$scope.chatmessage = "";
 	}
 })

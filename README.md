@@ -10,5 +10,6 @@
 19.8. | 18:00 - 23:00 | 5 hours
 
 21.8. | 9:40 - 11:40 | 2 hours
+21.8. | 21:30 - 23:30| 2 hours
 
-Total: 11 hours
+Total: 13 hours

@@ -1,3 +1,15 @@
+html body{
+	height: 1vh;
+}
+.chatbox{
+	overflow: scroll;
+	width: 80%;
+	height: 80%;
+}
+.bottom{
+	-webkit-align-self: center; /* Safari 7.0+ */
+	align-self: flex-end;
+}
 .fixed-pos {
   position: fixed;
   top: 0px;

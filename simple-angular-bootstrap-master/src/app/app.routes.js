@@ -13,11 +13,11 @@ MyApp.config(function($stateProvider, $urlRouterProvider) {
     .state("main.home", {
       url: "home",
       templateUrl: "templates/home/home.html",
-    })
+    })/*
     .state("main.login", {
       url: "login",
       templateUrl: "templates/login/login.html",
-    })
+    })*/
     .state("chat", {
       url: "/chat",
       templateUrl: "templates/main/main.html"
@@ -28,11 +28,10 @@ MyApp.config(function($stateProvider, $urlRouterProvider) {
 	  controller: "ChatController",
 	  controllerAs: "chat"
 	})
-	/*
-    .state("stuff", {
-      url: "/stuff",
-      templateUrl: "templates/stuff/stuff.html",
-      controller: "StuffController",
-      controllerAs: "stuffCtrl"
-    })*/
+	.state("main.channel", {
+		url: "room",
+		templateUrl: "templates/chat_select/room.html",
+		controller: "RoomController",
+		controllerAs: "room"
+	})
 });
