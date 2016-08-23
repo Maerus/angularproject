@@ -1,13 +1,13 @@
 <div>
-  <h2>Channel: {{chatName}}</h2>
-  <div class="chatbox">
-	<ul>
-	  <li ng-repeat="msg in messages">{{msg.timestamp | date:'dd.MM.yyyy / HH:mm'}}   {{msg.member}}: {{msg.message}}</li>
+  <h2 class="title">Channel <span class="channelname">{{chatName}}</span></h2>
+  <div id="chatbox" class="chatbox">
+	<ul class="chatmessages">
+	  <li ng-repeat="msg in messages"><span class="timestamp">{{msg.timestamp | date:'dd.MM.yyyy / HH:mm'}}</span><span class="member">{{msg.member}}</span>: {{msg.message}}</li>
 	</ul>
   </div>
   <div class="bottom">
     <input ng-model="username" class="user" type="text" placeholder="username"></input>
-	<input id="message" ng-model="chatmessage" class="message" type="text" placeholder="Type to chat"></input>
+	<input id="message" ng-keypress="enterToSend($event)" ng-model="chatmessage" class="message" type="text" placeholder="Type to chat"></input>
 	<input id="send" ng-click="sendMessage()" class="send" type="button" value="Send" disabled></input>
 
   </div>

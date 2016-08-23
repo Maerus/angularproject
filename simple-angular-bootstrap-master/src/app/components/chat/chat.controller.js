@@ -5,6 +5,7 @@ MyApp.controller("ChatController", function($scope, $stateParams, $timeout) {
 			firebase.database().ref('/messages/' + $scope.chatName).on('value', function(snapshot){
 				$timeout(function() {
 					$scope.messages = snapshot.val();
+					$scope.updateScroll();
 				}, 0);
 			});
 		}
@@ -26,11 +27,13 @@ MyApp.controller("ChatController", function($scope, $stateParams, $timeout) {
 			document.getElementById("send").disabled = true;
 		}
 	});
+	$scope.$watch('messages', function(){
+		$scope.updateScroll();
+	});
 	
 	$("#message").focus();
 	
 	$scope.sendMessage = function(){
-		//console.log("user: "+ $scope.username + "  msg: " + $scope.chatmessage + "  time: " + Date.now());
 		if($scope.chatName != ""){
 			var timestamp = Date.now();
 			firebase.database().ref('/messages/' + $scope.chatName).push({
@@ -45,5 +48,20 @@ MyApp.controller("ChatController", function($scope, $stateParams, $timeout) {
 			});
 		}
 		$scope.chatmessage = "";
+		$("#message").focus();
+	}
+	
+	$scope.enterToSend = function(event){
+		if(event.key == "Enter" && !document.getElementById("send").disabled){
+			$scope.sendMessage();
+		}
+	}
+	
+	var chatmessageHeight = 50; 
+	//26 oikea koko atm, en saa jostain syystä kaivettua sitä documentista mutta eipähän hajoa
+	
+	$scope.updateScroll = function(){
+		var height = Object.keys($scope.messages).length * chatmessageHeight;
+		$("#chatbox").animate({scrollTop: height});
 	}
 })

@@ -5,9 +5,9 @@
     <div>
       <div class="ui two column stackable grid">
         <div class="column">
-	      <h2 class="header1">Hot Topics</h2>
-		  <ul>
-		    <li ng-repeat="(key, chat) in freshChats">{{chat.timestamp | date:'dd.MM.yyyy / HH:mm'}} <a ng-href="#/chat/{{key}}">{{key}}</a> {{chat.messager}}: {{chat.lastMessage}}</li>
+	      <h2 class="header1">Recently Active Channels</h2>
+		  <ul class="recentChats">
+		    <li ng-repeat="chat in freshChats | orderBy : 'timestamp' : true">{{chat.timestamp | date:'dd.MM.yyyy / HH:mm'}} <a ng-href="#/chat/{{chat.channel}}">{{chat.channel}}</a> {{chat.messager}}: {{chat.lastMessage}}</li>
 		  </ul>
         </div>
         <div style="display: none" class="column">

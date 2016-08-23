@@ -12,4 +12,6 @@
 21.8. | 9:40 - 11:40 | 2 hours
 21.8. | 21:30 - 23:30| 2 hours
 
-Total: 13 hours
+23.8. | 0:20 - 4:50 | 4½ hours
+
+Total: 17½ hours

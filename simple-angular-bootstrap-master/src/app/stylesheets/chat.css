@@ -1,12 +1,125 @@
-html body{
-	height: 1vh;
+html, body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #eee;
+}
+nav{
+	top: 20px;
+}
+nav ul{
+    white-space:nowrap;
+}
+nav ul li{
+    display: inline;
+}
+nav ul li a{
+	margin: 10px;
+	padding: 7px;
+	padding-left: 40px;
+	padding-right: 40px;
+	border-style: outset;
+	border-radius: 10px;
+	font-size: 170%;
+	background-color: #fff;
+}
+.title{
+    white-space:nowrap;
+    position: fixed;
+    top: 60px;
+    left: 20%px;
+}
+.channelname{
+	font-size: 150%;
+	border-style: inset;
+	border-radius: 20px;
+	padding: 5px;
 }
 .chatbox{
 	overflow: scroll;
-	width: 80%;
-	height: 80%;
+	overflow-x: hidden;
+    width: 100%;
+    height: 80%;
+	word-wrap: break-word;
+	display:inline-block;
+	
+    position: fixed;
+    top: 140px;
+    left: 0px;
+	
+	border-style: inset;
+	background-color: #ddd;
+}
+.chatbox ul{
+	padding-left: 15px;
+}
+.chatbox li{
+	padding-bottom: 3px;
+	padding-top: 3px;
+}
+.timestamp{
+	font-size: 70%;
+}
+.member{
+	border-style: ridge;
+	border-radius: 5px;
+	padding: 5px;
+	padding-bottom: 3px;
+	padding-top: 3px;
 }
 .bottom{
-	-webkit-align-self: center; /* Safari 7.0+ */
-	align-self: flex-end;
+	position: fixed;
+    bottom: 10px;
+    left: 0px;
+	width: 100%;
+}
+.user{
+	width: 14%;
+	margin: 0;
+	margin-left: 5px;
+	padding: 0;
+}
+.message{
+	width: 70%;
+	margin: 0;
+	padding: 0;
+}
+.send{
+    position: fixed;
+	width: 15%;
+	margin: 0;
+	padding: 0;
+	right: 0px;
+	background-color: #bbb;
+}
+.send:disabled{
+	color: #aaa;
+	background-color: #999;
+}
+.pickUsername{
+	margin: 10px;
+	padding: 3px;
+	border-radius: 2px;
+	width: 50%;
+}
+.pickChannel{
+	margin: 10px;
+	padding: 3px;
+	margin-bottom: 30px;
+	border-radius: 2px;
+	width: 50%;
+}
+.joinChat{
+	margin: 45px;
+	padding: 10px;
+	border-style: outset;
+	border-radius: 20px;
+}
+.recentChats{
+	border-style: inset;
+	border-radius: 20px;
+	padding: 20px;
+}
+ul{
+	list-style-type: none;
 }
