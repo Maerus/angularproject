@@ -6,6 +6,13 @@
 https://murmuring-dawn-93076.herokuapp.com
 
 
+##Description
+
+This is a simple web based chat app. Users join a channel, pick a nickname and type messages for others to see.
+
+The frontpage will show 20 most recently active chats and clicking the chat name link will go into that channel.
+
+
 ## Hour accounting
 
 17.8. | 22:00 - 23:00 | 1 hour
